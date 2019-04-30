@@ -5,3 +5,10 @@ FUNCTION = (
     ('D', 'Divulgação'),
     ('I', 'Informática')
 )
+
+PLACE = (
+    ('PB', 'Próprio Bolso'),
+    ('CA', 'Caixinha'),
+    ('CO', 'Cofre'),
+    ('CB', 'Conta Bancária')
+)

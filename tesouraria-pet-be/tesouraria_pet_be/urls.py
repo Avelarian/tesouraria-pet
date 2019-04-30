@@ -23,6 +23,11 @@ router = routers.DefaultRouter()
 router.register('petianos', views.PetianoViewSet)
 router.register('tutores', views.TutorViewSet)
 router.register('eventos', views.EventoViewSet)
+router.register('historicoPetianos', views.HistoricoPetianosViewSet)
+router.register('historicoEventos', views.HistoricoEventosViewSet)
+router.register('caixinha', views.CaixinhaViewSet)
+router.register('cofre', views.CofreViewSet)
+router.register('contabancaria', views.ContaBancariaViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

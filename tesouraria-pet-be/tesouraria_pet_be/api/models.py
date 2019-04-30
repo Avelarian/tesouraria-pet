@@ -41,3 +41,37 @@ class Evento(models.Model):
     typePet     = models.CharField(max_length=10 ,default="Tutor", editable=False)
     cashier     = models.FloatField(default=0.00)
     active      = models.BooleanField(default=True)
+
+class Caixinha(models.Model):
+    value = models.FloatField(default=0.00)
+
+class Cofre(models.Model):
+    value = models.FloatField(default=0.00)
+
+class ContaBancaria(models.Model):
+    value = models.FloatField(default=0.00)
+
+class HistoricoPetiano(models.Model):
+    petiano     = models.ForeignKey(
+        Petiano, 
+        on_delete=models.DO_NOTHING)
+    dt_created  = models.DateField()
+    value       = models.FloatField(default=0.00)
+    main_reason = models.CharField(max_length=30)
+    description = models.TextField(null=True)
+    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
+    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
+
+class HistoricoEvento(models.Model):
+    evento     = models.ForeignKey(
+        Evento, 
+        on_delete=models.DO_NOTHING)
+    petiano     = models.ForeignKey(
+        Petiano, 
+        on_delete=models.DO_NOTHING)
+    dt_created  = models.DateField()
+    value       = models.FloatField(default=0.00)
+    main_reason = models.CharField(max_length=30)
+    description = models.TextField(null=True)
+    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
+    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="CA") 
