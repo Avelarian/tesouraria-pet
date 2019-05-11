@@ -1,0 +1,13 @@
+div#wrapper {
+    position: absolute;
+    top: 125px;
+    left: 21%;
+    width: 60%;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+  }
+  

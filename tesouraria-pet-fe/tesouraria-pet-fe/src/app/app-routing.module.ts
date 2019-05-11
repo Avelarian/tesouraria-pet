@@ -5,31 +5,48 @@ import { EventosComponent } from './eventos/eventos.component';
 import { CaixinhaComponent } from './caixinha/caixinha.component';
 import { CofreComponent } from './cofre/cofre.component';
 import { ContaBancariaComponent } from './conta-bancaria/conta-bancaria.component';
+import { LoginComponent } from './login/login.component';
+import { LoginGuard } from './login/login.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
-    path: 'saldoPessoal',
-    component: SaldoPessoalComponent
+    path: '',
+    component: SaldoPessoalComponent,
+    canActivate: [LoginGuard]
   },
   {
-    path: '',
-    component: SaldoPessoalComponent
+    path: 'saldoPessoal',
+    component: SaldoPessoalComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'eventos',
-    component: EventosComponent
+    component: EventosComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'caixinha',
-    component: CaixinhaComponent
+    component: CaixinhaComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'cofre',
-    component: CofreComponent
+    component: CofreComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'contaBancaria',
-    component: ContaBancariaComponent
+    component: ContaBancariaComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
 ]
 

@@ -1,0 +1,20 @@
+<div class="alert alert-danger" *ngIf="loginFail">
+  <strong><span class="glyphicon glyphicon-alert"></span> {{ msgLogin }}</strong>
+</div>
+<div class="wrapper" id="wrapper">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <img alt="Tesouraria PET Elétrica" style="display: inline-block; width: 13%;" src="./assets/img/logo.png">
+      Tesouraria PET Elétrica
+    </div>
+    <div class="panel-body">
+      <label>Usuário</label><br>
+      <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" class="form-control"/><br>
+      <label>Senha</label><br>
+      <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><br>
+      <button type="button" (click)="loginUser()" class="btn btn-primary">Entrar</button>
+      <div class="divider"></div>
+      <button type="button" (click)="registerUser()" class="btn btn-secundary">Registrar</button>
+    </div>
+  </div>
+</div>
