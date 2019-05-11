@@ -1,31 +1,33 @@
 from django.db import models
 from tesouraria_pet_be.api import constants
+from django.contrib.auth.models import User
 
-# Create your models here.
+# Create your models here. PermissionsMixin
+
 
 class Petiano(models.Model):
-    name                = models.CharField(max_length=256) #max_length = required!!
-    email               = models.CharField(max_length=256) 
-    mNumber             = models.CharField(max_length=11)
-    dt_entryCourse      = models.DateField()
-    dt_leavingCourse    = models.DateField()
-    cpfNumber           = models.CharField(max_length=11)
-    rgNumber            = models.CharField(max_length=10)
-    telFix              = models.CharField(max_length=10, null=True)
-    celNumber           = models.CharField(max_length=11)
-    address             = models.TextField()
-    dt_entryPet         = models.DateField()
-    dt_leavePet         = models.DateField()
-    functionPet         = models.CharField(max_length=16, choices=constants.FUNCTION, default="T")
-    debt                = models.FloatField(default=0.00)
-    active              = models.BooleanField(default=True)
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mNumber = models.CharField(max_length=11)
+    dt_entryCourse = models.DateField()
+    dt_leavingCourse = models.DateField()
+    cpfNumber = models.CharField(max_length=11)
+    rgNumber = models.CharField(max_length=13)
+    celNumber = models.CharField(max_length=11)
+    address = models.TextField()
+    dt_entryPet = models.DateField()
+    dt_leavePet = models.DateField()
+    functionPet = models.CharField(max_length=16, choices=constants.FUNCTION, default="T")
+    debt = models.FloatField(default=0.00)
+
 
 class Tutor(models.Model):
+    username            = models.CharField(max_length=50)
+    password            = models.CharField(max_length=50)
     name        = models.CharField(max_length=256)
     email       = models.CharField(max_length=256)
     cpfNumber   = models.CharField(max_length=11)
     rgNumber    = models.CharField(max_length=10)
-    telFix      = models.CharField(max_length=10, null=True)
     celNumber   = models.CharField(max_length=11)
     address     = models.TextField()
     dt_entryPet = models.DateField()

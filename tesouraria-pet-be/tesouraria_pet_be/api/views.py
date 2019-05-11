@@ -1,15 +1,19 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User, Group
 from .models import Petiano, Tutor, Evento, HistoricoPetiano, HistoricoEvento, Caixinha, Cofre, ContaBancaria
 from rest_framework import viewsets
 from tesouraria_pet_be.api.serializers import PetianoSerializer, TutorSerializer, EventoSerializer, HistoricoPetianosSerializer, HistoricoEventosSerializer, CaixinhaSerializer, CofreSerializer, ContaBancariaSerializer
+from rolepermissions.roles import assign_role
+from rest_framework.response import Response
+from rolepermissions.decorators import has_role_decorator
+from rolepermissions.decorators import has_permission_decorator
 
 # Create your views here.
+
 
 class PetianoViewSet(viewsets.ModelViewSet):
 
     queryset = Petiano.objects.all()
     serializer_class = PetianoSerializer
+
 
 class TutorViewSet(viewsets.ModelViewSet):
 
@@ -20,6 +24,7 @@ class EventoViewSet(viewsets.ModelViewSet):
 
     queryset = Evento.objects.all()
     serializer_class = EventoSerializer
+
 
 class HistoricoPetianosViewSet(viewsets.ModelViewSet):
 
