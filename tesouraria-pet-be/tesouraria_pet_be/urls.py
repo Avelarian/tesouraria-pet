@@ -30,11 +30,14 @@ router.register('historicoEventos', views.HistoricoEventosViewSet)
 router.register('caixinha', views.CaixinhaViewSet)
 router.register('cofre', views.CofreViewSet)
 router.register('contabancaria', views.ContaBancariaViewSet)
+router.register('users', views.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', views.CreateUserView.as_view(), name='user'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-verify/', verify_jwt_token),
+    url('^historicoPetianos/(?P<id>.+)/$', views.get_aHistoricoViewSet.as_view()),
 ]

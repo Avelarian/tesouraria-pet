@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import Petiano, Tutor, Evento, HistoricoPetiano, HistoricoEvento, Caixinha, Cofre, ContaBancaria
+from django.contrib.auth import get_user_model
+
 
 class PetianoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,4 +42,28 @@ class CofreSerializer(serializers.ModelSerializer):
 class ContaBancariaSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContaBancaria
+        fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class RegisterUserSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField(write_only=True)
+
+    def create(self, validated_data):
+        user = get_user_model().objects.create(
+            username = validated_data['username']
+        )
+        user.set_password(validated_data['password'])
+        user.is_active = False
+        user.save()
+        return user
+
+    class Meta:
+        model = get_user_model()
         fields = '__all__'

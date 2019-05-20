@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Petiano(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     mNumber = models.CharField(max_length=11)
     dt_entryCourse = models.DateField()
     dt_leavingCourse = models.DateField()

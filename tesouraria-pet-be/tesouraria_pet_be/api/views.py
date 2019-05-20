@@ -1,10 +1,12 @@
-from .models import Petiano, Tutor, Evento, HistoricoPetiano, HistoricoEvento, Caixinha, Cofre, ContaBancaria
-from rest_framework import viewsets
-from tesouraria_pet_be.api.serializers import PetianoSerializer, TutorSerializer, EventoSerializer, HistoricoPetianosSerializer, HistoricoEventosSerializer, CaixinhaSerializer, CofreSerializer, ContaBancariaSerializer
-from rolepermissions.roles import assign_role
+from .models import User, Petiano, Tutor, Evento, HistoricoPetiano, HistoricoEvento, Caixinha, Cofre, ContaBancaria
+from rest_framework import viewsets,  status
+from tesouraria_pet_be.api.serializers import RegisterUserSerializer, UserSerializer, PetianoSerializer, TutorSerializer, EventoSerializer, HistoricoPetianosSerializer, HistoricoEventosSerializer, CaixinhaSerializer, CofreSerializer, ContaBancariaSerializer
 from rest_framework.response import Response
-from rolepermissions.decorators import has_role_decorator
-from rolepermissions.decorators import has_permission_decorator
+from rest_framework.permissions import AllowAny
+from rest_framework.generics import CreateAPIView
+from django.contrib.auth import get_user_model
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import generics
 
 # Create your views here.
 
@@ -13,6 +15,21 @@ class PetianoViewSet(viewsets.ModelViewSet):
 
     queryset = Petiano.objects.all()
     serializer_class = PetianoSerializer
+
+    class Meta:
+        model = Petiano
+
+
+class CreateUserView(CreateAPIView):
+    permission_classes = (AllowAny,)
+    model = get_user_model()
+    authentication_classes = []
+    serializer_class = RegisterUserSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class TutorViewSet(viewsets.ModelViewSet):
@@ -50,3 +67,11 @@ class ContaBancariaViewSet(viewsets.ModelViewSet):
 
     queryset = ContaBancaria.objects.all()
     serializer_class = ContaBancariaSerializer
+
+
+class get_aHistoricoViewSet(generics.ListAPIView):
+    serializer_class = HistoricoPetianosSerializer
+
+    def get_queryset(self):
+        id = self.kwargs['id']
+        return HistoricoPetiano.objects.filter(id=id)

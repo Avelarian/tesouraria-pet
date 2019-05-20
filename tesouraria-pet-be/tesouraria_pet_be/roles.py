@@ -45,6 +45,5 @@ class Others(AbstractUserRole):
         'add_user': 'True',
         'change_user': 'True',
         'view_user': 'True',
-
     }
 

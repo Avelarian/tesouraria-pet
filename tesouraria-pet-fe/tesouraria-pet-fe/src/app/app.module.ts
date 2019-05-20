@@ -16,6 +16,8 @@ import { LoginService } from './login/login.service';
 import { LoginGuard } from './login/login.guard';
 import { TokenInterceptorService } from './token-interceptor/token-interceptor.service';
 import { RegisterComponent } from './register/register.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { RegisterComponent } from './register/register.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [LoginService, LoginGuard, {
     provide: HTTP_INTERCEPTORS,

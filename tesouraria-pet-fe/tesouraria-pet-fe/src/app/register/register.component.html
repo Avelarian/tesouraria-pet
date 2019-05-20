@@ -1,86 +1,15 @@
-<div class="alert alert-danger" *ngIf="registerFail">
-  <strong><span class="glyphicon glyphicon-alert"></span> {{ msgRegister }}</strong>
-</div>
 <div class="wrapper" id="wrapper">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <img alt="Tesouraria PET Elétrica" style="display: inline-block; width: 2.889%;" src="./assets/img/logo.png">
+      <img alt="Tesouraria PET Elétrica" style="display: inline-block; width: 13%;" src="./assets/img/logo.png">
       Tesouraria PET Elétrica
     </div>
     <div class="panel-body">
-      <label>Selecione uma opção:</label>
-      <select [(ngModel)]="selectedValue" placeholder="Function" class="form-control" (change)="form()">
-        <option value="Petiano">Petiano</option>
-        <option value="Tutor">Tutor</option>
-      </select><br>
-      <div *ngIf="forme">
-        <div class="form-group">
-          <label>Nome</label><br>
-          <input type="text" [(ngModel)]="petianoUser.user.first_name" name="first_name" placeholder="First Name" class="form-control"/><br>
-        </div>
-        <div class="form-group">
-          <label>Sobrenome</label><br>
-          <input type="text" [(ngModel)]="petianoUser.user.last_name" name="last_name" placeholder="Last Name" class="form-control"/><br>
-        </div>
-        <div class="form-group">
-          <label>Email</label><br>
-          <input type="email" [(ngModel)]="petianoUser.user.email" name="email" placeholder="E-mail" class="form-control"/><br>
-        </div>
-        <div class="form-group" *ngIf="petiano">
-          <label>Número de matrícula</label><br>
-          <input type="text" [(ngModel)]="petianoUser.mNumber" name="mNumber" placeholder="Course Number" class="form-control"/><br>
-        </div>
-        <div class="form-group" *ngIf="petiano">
-          <label>Data de entrada no curso</label><br>
-          <input type="date" [(ngModel)]="petianoUser.dt_entryCourse" name="dt_entryCourse" class="form-control"/><br>
-        </div>
-        <div class="form-group" *ngIf="petiano">
-          <label>Data de saída do curso (Estimativa)</label><br>
-          <input type="date" [(ngModel)]="petianoUser.dt_leavingCourse" name="dt_leavingCourse" class="form-control"/><br>
-        </div>
-        <div class="form-group">  
-          <label>CPF</label><br>
-          <input type="text" [(ngModel)]="petianoUser.cpfNumber" name="cpfNumber" placeholder="CPF" class="form-control"/><br>
-        </div>
-        <div class="form-group">
-          <label>RG (com UF)</label><br>
-          <input type="text" [(ngModel)]="petianoUser.rgNumber" name="rgNumber" placeholder="RG" class="form-control"/><br>
-        </div>
-        <div class="form-group">  
-          <label>Telefone celular (com DDD)</label><br>
-          <input type="text" [(ngModel)]="petianoUser.celNumber" name="celNumber" placeholder="Mobile Number" class="form-control"/><br>
-        </div>
-        <div class="form-group">  
-          <label>Endereço</label><br>
-          <input type="text" [(ngModel)]="petianoUser.address" name="address" placeholder="Rua, Número, Bairro" class="form-control"/><br>
-        </div>
-        <div class="form-group">
-          <label>Data de entrada no PET</label><br>
-          <input type="date" [(ngModel)]="petianoUser.dt_entryPet" name="dt_entryPet" class="form-control"/><br>
-        </div>
-        <div class="form-group">
-          <label>Data de saída no PET</label><br>
-          <input type="date" [(ngModel)]="petianoUser.dt_leavePet" name="dt_leavePet" class="form-control"/><br>
-        </div>
-        <div class="form-group" *ngIf="petiano">
-          <label>Função no PET</label><br>
-          <select type="text" [(ngModel)]="petianoUser.functionPet" name="functionPet" placeholder="Function" class="form-control">
-            <option [ngValue]='D'>Divulgação</option>
-            <option [ngValue]='I'>Informática</option>
-            <option [ngValue]='O'>Organização</option>
-            <option [ngValue]='RH'>Recursos Humanos</option>
-            <option [ngValue]='T'>Tesouraria</option>
-          </select><br>
-        </div>
-        <div class="form-group">
-          <hr>
-          <label>Usuário</label><br>
-          <input type="text" [(ngModel)]="petianoUser.user.username" name="username" placeholder="Username" class="form-control"/><br>
-          <label>Senha</label><br>
-          <input type="password" [(ngModel)]="petianoUser.user.password" name="password" placeholder="Password" class="form-control"/><br>
-        </div>
-      </div>
-        <button type="button" (click)="registerUser()" class="btn btn-primary">Registrar</button>
+      <label>Usuário</label><br>
+      <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" class="form-control"/><br>
+      <label>Senha</label><br>
+      <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><br>
+      <button type="button" (click)="registerUser()" class="btn btn-primary">Registrar</button>
       <div class="divider"></div>
       <button type="button" (click)="loginUser()" class="btn btn-secundary">Entrar</button>
     </div>

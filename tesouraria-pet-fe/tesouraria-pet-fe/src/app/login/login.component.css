@@ -1,6 +1,6 @@
 div#wrapper {
     position: absolute;
-    top:  40%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -10,4 +10,3 @@ div#wrapper {
     height:auto;
     display:inline-block;
   }
-  

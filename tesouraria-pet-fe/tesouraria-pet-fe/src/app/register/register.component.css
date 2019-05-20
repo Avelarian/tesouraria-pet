@@ -1,8 +1,8 @@
 div#wrapper {
     position: absolute;
-    top: 125px;
-    left: 21%;
-    width: 60%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .divider{
@@ -10,4 +10,3 @@ div#wrapper {
     height:auto;
     display:inline-block;
   }
-  

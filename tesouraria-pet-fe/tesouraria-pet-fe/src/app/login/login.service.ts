@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -21,11 +20,15 @@ export class LoginService {
   }
 
   tokenVerify() {
-    return this.httpClient.post<any>(this.baseUrl + 'api-token-verify/', {'token':localStorage.getItem('token')});
+    return this.httpClient.post<any>(this.baseUrl + 'api-token-verify/', {'token': localStorage.getItem('token')});
   }
 
   logoutUser() {
     localStorage.removeItem('token')
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
+  }
+
+  getTheUser() {
+    return this.httpClient.get<any>(this.baseUrl + 'users/');
   }
 }

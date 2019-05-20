@@ -12,11 +12,11 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
-    component: SaldoPessoalComponent,
-    canActivate: [LoginGuard]
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
-    path: 'saldoPessoal',
+    path: 'saldoPessoal/:id',
     component: SaldoPessoalComponent,
     canActivate: [LoginGuard]
   },
