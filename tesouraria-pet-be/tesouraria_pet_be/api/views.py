@@ -73,5 +73,17 @@ class get_aHistoricoViewSet(generics.ListAPIView):
     serializer_class = HistoricoPetianosSerializer
 
     def get_queryset(self):
-        id = self.kwargs['id']
-        return HistoricoPetiano.objects.filter(id=id)
+        petiano = self.kwargs['petiano']
+        return HistoricoPetiano.objects.filter(petiano=petiano)
+
+
+class ThePetiano(generics.ListAPIView):
+    serializer_class = PetianoSerializer
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+        """
+        user = self.request.user
+        return Petiano.objects.filter(user=user)

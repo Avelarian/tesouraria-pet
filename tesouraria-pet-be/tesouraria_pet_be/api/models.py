@@ -17,7 +17,7 @@ class Petiano(models.Model):
     address = models.TextField()
     dt_entryPet = models.DateField()
     dt_leavePet = models.DateField()
-    functionPet = models.CharField(max_length=16, choices=constants.FUNCTION, default="T")
+    functionPet = models.CharField(max_length=16, choices=constants.FUNCTION, default="Tesouraria")
     debt = models.FloatField(default=0.00)
 
 
@@ -35,14 +35,15 @@ class Tutor(models.Model):
     functionPet = models.CharField(max_length=10 ,default="Tutor", editable=False)
     active      = models.BooleanField(default=True)
 
+
 class Evento(models.Model):
-    name        = models.CharField(max_length=256)
-    edition     = models.CharField(max_length=3)
-    dt_start    = models.DateField()
-    dt_finish   = models.DateField()
-    typePet     = models.CharField(max_length=10 ,default="Tutor", editable=False)
-    cashier     = models.FloatField(default=0.00)
-    active      = models.BooleanField(default=True)
+    name = models.CharField(max_length=256)
+    edition = models.CharField(max_length=3)
+    dt_start = models.DateField()
+    dt_finish = models.DateField()
+    typePet = models.CharField(max_length=10, choices=constants.TYPE_EVENTS, default="Extensão")
+    cashier = models.FloatField(default=0.00)
+    active = models.BooleanField(default=True)
 
 class Caixinha(models.Model):
     value = models.FloatField(default=0.00)
@@ -53,16 +54,17 @@ class Cofre(models.Model):
 class ContaBancaria(models.Model):
     value = models.FloatField(default=0.00)
 
+
 class HistoricoPetiano(models.Model):
     petiano     = models.ForeignKey(
         Petiano, 
         on_delete=models.DO_NOTHING)
     dt_created  = models.DateField()
     value       = models.FloatField(default=0.00)
-    main_reason = models.CharField(max_length=30)
+    main_reason = models.CharField(max_length=20, choices=constants.SCENARIOS, default="Impressão")
     description = models.TextField(null=True)
-    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
-    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
+    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="Caixinha")
+    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="Caixinha")
 
 class HistoricoEvento(models.Model):
     evento     = models.ForeignKey(
@@ -75,5 +77,5 @@ class HistoricoEvento(models.Model):
     value       = models.FloatField(default=0.00)
     main_reason = models.CharField(max_length=30)
     description = models.TextField(null=True)
-    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="CA")
-    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="CA") 
+    from_place  = models.CharField(max_length=16, choices=constants.PLACE, default="Caixinha")
+    to_place    = models.CharField(max_length=16, choices=constants.PLACE, default="Caixinha")

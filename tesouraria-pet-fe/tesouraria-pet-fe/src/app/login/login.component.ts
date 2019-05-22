@@ -26,12 +26,8 @@ export class LoginComponent implements OnInit {
         this.loginService.getTheUser()
           .subscribe(
             resp => {
-              for (let i = 0; i < resp.length; i++) { // Tem como melhorar!!! Mudar >> colocar id dos petianos!!
-                if (resp[i].username === this.user.username) {
-                  this.router.navigate(['saldoPessoal', resp[i].id]),
-                  this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + this.user.username);
-                }
-              }
+              this.router.navigate(['saldoPessoal', resp[0].id]),
+              this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + this.user.username);
             },
             erro => {
               this.toastr.error('Verifique a conexão e tente novamente!', 'Autenticação falhou!');

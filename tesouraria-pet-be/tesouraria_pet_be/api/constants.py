@@ -1,14 +1,27 @@
 FUNCTION = (
-    ('T', 'Tesouraria'), 
-    ('RH', 'Relações Humanas'), 
-    ('O', 'Organização'), 
-    ('D', 'Divulgação'),
-    ('I', 'Informática')
+    ('Tesouraria', 'Tesouraria'),
+    ('Relações Humanas', 'Relações Humanas'),
+    ('Organização', 'Organização'),
+    ('Divulgação', 'Divulgação'),
+    ('Informática', 'Informática')
 )
 
 PLACE = (
-    ('PB', 'Próprio Bolso'),
-    ('CA', 'Caixinha'),
-    ('CO', 'Cofre'),
-    ('CB', 'Conta Bancária')
+    ('Próprio Bolso', 'Próprio Bolso'),
+    ('Caixinha', 'Caixinha'),
+    ('Cofre', 'Cofre'),
+    ('Conta Bancária', 'Conta Bancária')
+)
+
+SCENARIOS = (
+    ('Reembolso', 'Reembolso'),
+    ('Pagamento de dívida', 'Pagamento de dívida'),
+    ('Empréstimo pessoal', 'Empréstimo pessoal'),
+    ('Impressão', 'Impressão'),
+    ('Mensalidade', 'Mensalidade'),
+)
+
+TYPE_EVENTS = (
+    ('Extensão', 'Extensão'),
+    ('Ensino', 'Ensino'),
 )

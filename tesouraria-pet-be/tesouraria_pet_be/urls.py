@@ -39,5 +39,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-verify/', verify_jwt_token),
-    url('^historicoPetianos/(?P<id>.+)/$', views.get_aHistoricoViewSet.as_view()),
+    url('^historicoPetiano/(?P<petiano>.+)/$', views.get_aHistoricoViewSet.as_view()),
+    path('petiano-id/', views.ThePetiano.as_view()),
 ]

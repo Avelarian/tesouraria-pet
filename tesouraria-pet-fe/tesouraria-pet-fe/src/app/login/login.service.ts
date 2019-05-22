@@ -29,6 +29,6 @@ export class LoginService {
   }
 
   getTheUser() {
-    return this.httpClient.get<any>(this.baseUrl + 'users/');
+    return this.httpClient.get<any>(this.baseUrl + 'petiano-id/');
   }
 }
