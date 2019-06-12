@@ -3,11 +3,11 @@
   <div class="row">
       <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked">
-              <li role="presentation"><a href="saldoPessoal">Saldo pessoal</a></li>
-              <li role="presentation"><a href="eventos">Eventos</a></li>
-              <li role="presentation"><a href="caixinha">Caixinha</a></li>
-              <li role="presentation"><a href="cofre">Cofre</a></li>
-              <li role="presentation"><a href="contaBancaria">Conta Bancária</a></li>
+              <li role="presentation" ><a href="saldoPessoal">Saldo pessoal</a></li>
+              <li role="presentation" ><a href="eventos">Eventos</a></li>
+              <li role="presentation" class="active" ><a href="caixinha">Caixinha</a></li>
+              <li role="presentation" ><a href="cofre">Cofre</a></li>
+              <li role="presentation" ><a href="contaBancaria">Conta Bancária</a></li>
           </ul>
       </div>
       <div class=col-md-10>
@@ -22,7 +22,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    <a (click)="loadInfo(1)" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                     Movimentação de petianos</a>
                   </h4>
                 </div>
@@ -40,23 +40,15 @@
                             <th>Destino</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>Data</td>
-                            <th>Responsável</th>
-                            <td>Valor</td>
-                            <td>Razão</td>
-                            <td>Origem</td>
-                            <td>Destino</td>
-                          </tr>
-                          <tr>
-                            <td>Data</td>
-                            <th>Responsável</th>
-                            <td>Valor</td>
-                            <td>Razão</td>
-                            <td>Origem</td>
-                            <td>Destino</td>
-                          </tr>
+                        <tbody *ngFor="let historic of historical">
+                        <tr>
+                          <td>{{ historic.dt_created }}</td>
+                          <td>{{ historic.petiano }}</td>
+                          <td>{{ historic.value }}</td>
+                          <td>{{ historic.main_reason }}</td>
+                          <td>{{ historic.from_place }}</td>
+                          <td>{{ historic.to_place }}</td>
+                        </tr>
                         </tbody>
                       </table>
                     </div>
@@ -66,7 +58,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    <a (click)="loadInfo(2)" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                     Movimentação de eventos</a>
                   </h4>
                 </div>
@@ -85,25 +77,16 @@
                             <th>Destino</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>Data</td>
-                            <th>Responsável</th>
-                            <th>Evento</th>
-                            <td>Valor</td>
-                            <td>Razão</td>
-                            <td>Origem</td>
-                            <td>Destino</td>
-                          </tr>
-                          <tr>
-                            <td>Data</td>
-                            <th>Responsável</th>
-                            <th>Evento</th>
-                            <td>Valor</td>
-                            <td>Razão</td>
-                            <td>Origem</td>
-                            <td>Destino</td>
-                          </tr>
+                        <tbody *ngFor="let historic of historical">
+                        <tr>
+                          <td>{{ historic.dt_created }}</td>
+                          <td>{{ historic.evento }}</td>
+                          <td>{{ historic.petiano }}</td>
+                          <td>{{ historic.value }}</td>
+                          <td>{{ historic.main_reason }}</td>
+                          <td>{{ historic.from_place }}</td>
+                          <td>{{ historic.to_place }}</td>
+                        </tr>
                         </tbody>
                       </table>
                     </div>

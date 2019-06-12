@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import {CaixinhaService} from './caixinha.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-caixinha',
@@ -10,17 +12,63 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 })
 export class CaixinhaComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  private historical = [];
+
+  constructor(private loginService: LoginService, private router: Router, private caixinhaService: CaixinhaService, private toastr: ToastrService) { }
+
+  loadInfo(arg) {
+    if (arg === 2) {
+      this.caixinhaService.getTheHistoricoEventos()
+        .subscribe(
+          resp => this.historical = resp,
+          erro => {
+            if (erro.status === 400 || erro.status === 401) {
+              this.router.navigate(['/login']);
+              this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
+            } else {
+              this.toastr.error('Verifique sua conexão!', 'Erro!');
+            }
+          }
+        );
+    } else if (arg === 1) {
+      this.caixinhaService.getTheHistorico()
+        .subscribe(
+          resp => this.historical = resp,
+          erro => {
+            if (erro.status === 400 || erro.status === 401) {
+              this.router.navigate(['/login']);
+              this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
+            } else {
+              this.toastr.error('Verifique sua conexão!', 'Erro!');
+            }
+          }
+        );
+    }
+  }
 
   ngOnInit() {
     this.loginService.tokenVerify()
     .subscribe(
-      res => console.log("Token válido"),
+      res => {
+        console.log('Token válido');
+        this.caixinhaService.getTheHistorico()
+          .subscribe(
+            resp => this.historical = resp,
+            erro => {
+              if (erro.status === 400 || erro.status === 401) {
+                this.router.navigate(['/login']);
+                this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
+              } else {
+                this.toastr.error('Verifique sua conexão!', 'Erro!');
+              }
+            }
+          );
+      },
       err => {
         localStorage.setItem('msg', 'Sessão expirada!')
         this.router.navigate(['/login']);
       }
-    )
+    );
   }
 
 }

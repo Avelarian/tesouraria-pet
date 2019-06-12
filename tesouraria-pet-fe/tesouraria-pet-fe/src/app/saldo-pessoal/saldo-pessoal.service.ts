@@ -12,10 +12,8 @@ export class SaldoPessoalService {
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
-  private id = null;
 
-  getTheHistorico() {
-    this.route.params.subscribe(params => { this.id = params['id']; });
-    return this.http.get<any>(this.baseUrl + '/historicoPetiano/' + this.id + '/');
+  getTheHistorico(id) {
+    return this.http.get<any>(this.baseUrl + '/historicoPetiano/' + id + '/');
   }
 }

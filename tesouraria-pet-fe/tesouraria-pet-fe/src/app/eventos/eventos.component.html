@@ -4,7 +4,7 @@
       <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked">
               <li role="presentation"><a href="saldoPessoal">Saldo pessoal</a></li>
-              <li role="presentation"><a href="eventos">Eventos</a></li>
+              <li role="presentation" class="active"><a href="eventos">Eventos</a></li>
               <li role="presentation"><a href="caixinha">Caixinha</a></li>
               <li role="presentation"><a href="cofre">Cofre</a></li>
               <li role="presentation"><a href="contaBancaria">Conta Bancária</a></li>
@@ -16,12 +16,11 @@
               <div class="row">
                 <div class="col-md-6"><p><b>Caixa: </b></p></div>
                 <div class="col-md-6"><div class="pull-right"><div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Eventos <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" [(ngModel)]="evento.id" name="evento_id" *ngFor="let x of events">
-                      <li (click)="teste(x.id)" [value]="x.id">{{ x.name }}</li>
-                    </ul>
+                    <select class="btn btn-primary" [(ngModel)]="valueSelected"
+                            name="valueSelected" (change)="getEvent(valueSelected)" >
+                      <option disabled selected>Eventos</option>
+                      <option *ngFor="let x of events" [value]="x.id">{{ x.name }}</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -40,22 +39,14 @@
                   <th>Destino</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngFor="let historic of historical">
                 <tr>
-                  <td>Data</td>
-                  <th>Responsável</th>
-                  <td>Valor</td>
-                  <td>Razão</td>
-                  <td>Origem</td>
-                  <td>Destino</td>
-                </tr>
-                <tr>
-                  <td>Data</td>
-                  <th>Responsável</th>
-                  <td>Valor</td>
-                  <td>Razão</td>
-                  <td>Origem</td>
-                  <td>Destino</td>
+                  <td>{{ historic.dt_created }}</td>
+                  <td>{{ historic.petiano }}</td>
+                  <td>{{ historic.value }}</td>
+                  <td>{{ historic.main_reason }}</td>
+                  <td>{{ historic.from_place }}</td>
+                  <td>{{ historic.to_place }}</td>
                 </tr>
               </tbody>
             </table>

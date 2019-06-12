@@ -13,11 +13,26 @@ export class EventosComponent implements OnInit {
 
   private events = [];
   private evento = {};
+  private historical = [];
+  private valueSelected = false;
 
   constructor(private loginService: LoginService, private router: Router, private eventosService: EventosService, private toastr: ToastrService) { }
 
-  teste(id) {
-    console.log(id);
+  getEvent(id) {
+    this.eventosService.getTheEventHistorical(id)
+      .subscribe(
+        res => {
+          this.historical = res;
+        },
+        err => {
+          if (err.status === 400 || err.status === 401) {
+            this.router.navigate(['/login']);
+            this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
+          } else {
+            this.toastr.error('Verifique sua conexão!', 'Erro!');
+          }
+        }
+      );
   }
 
   ngOnInit() {
@@ -28,7 +43,8 @@ export class EventosComponent implements OnInit {
           .subscribe(
             resp => {
               this.events = resp;
-              console.log(resp);
+              this.getEvent(resp[0].id);
+              this.valueSelected = resp[0].id;
             },
             erro => {
               this.toastr.error('Verifique sua conexão!', 'Erro!');
@@ -36,7 +52,7 @@ export class EventosComponent implements OnInit {
           );
       },
       err => {
-        localStorage.setItem('msg', 'Sessão expirada!')
+        this.toastr.error('Refaça a autenticação!', 'Sessão expirada!');
         this.router.navigate(['/login']);
       }
     );

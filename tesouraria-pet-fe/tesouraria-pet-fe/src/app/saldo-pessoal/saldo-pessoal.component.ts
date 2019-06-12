@@ -17,10 +17,11 @@ export class SaldoPessoalComponent implements OnInit {
   constructor(private saldoPessoalService: SaldoPessoalService, private loginService: LoginService, private router: Router, private toastr: ToastrService) {}
   
   ngOnInit() {
-    this.loginService.tokenVerify()
+    this.loginService.getTheUser()
     .subscribe(
-      res => {
-        this.saldoPessoalService.getTheHistorico()
+      resp => {
+        this.router.navigate(['saldoPessoal', resp[0].id]),
+          this.saldoPessoalService.getTheHistorico(resp[0].id)
           .subscribe(
             res => {
               this.historical = res;
@@ -36,7 +37,7 @@ export class SaldoPessoalComponent implements OnInit {
           this.toastr.error('Verifique sua conexão!', 'Erro!');
         }
       }
-    )
+    );
   }
 
 }

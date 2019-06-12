@@ -21,6 +21,11 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
+    path: 'saldoPessoal',
+    component: SaldoPessoalComponent,
+    canActivate: [LoginGuard]
+  },
+  {
     path: 'eventos',
     component: EventosComponent,
     canActivate: [LoginGuard]

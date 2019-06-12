@@ -16,4 +16,8 @@ export class EventosService {
   getAllEvents() {
     return this.http.get<any>(this.baseUrl + '/eventos/');
   }
+
+  getTheEventHistorical(id) {
+    return this.http.get<any>(this.baseUrl + '/historicoEvento/' + id + '/');
+  }
 }
