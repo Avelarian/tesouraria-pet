@@ -6,12 +6,42 @@
     </div>
     <div class="panel-body">
       <label>Usuário</label><br>
-      <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" class="form-control"/><br>
+      <input type="text" [(ngModel)]="user.email" name="email" placeholder="Email" class="form-control"/><br>
       <label>Senha</label><br>
-      <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><br>
+      <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><hr>
+      <div class="row">
+        <div class="col">
+          <label>Nome Completo</label><br>
+          <input type="text" [(ngModel)]="user.full_name" name="full_name" placeholder="Ex.: Ian Avelar Peixoto" class="form-control"/><br>
+        </div>
+        <div class="col">
+          <label>Número de celular</label><br>
+          <input type="text" [(ngModel)]="user.mobile_number" name="mobile_number" placeholder="(34) 9 9999-9999" class="form-control"/><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Data de início do curso</label><br>
+          <input type="text" [(ngModel)]="user.dt_start_course" name="dt_start_course" placeholder="08/08/2016" class="form-control"/><br>
+        </div>
+        <div class="col">
+          <label>Data de término do curso (previsão)</label><br>
+          <input type="text" [(ngModel)]="user.dt_finish_course" name="dt_finish_course" placeholder="08/08/2021" class="form-control"/><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>CPF</label><br>
+          <input type="text" [(ngModel)]="user.cpf_number" name="cpf_number" placeholder="123.456.789-10" class="form-control"/><br>
+        </div>
+        <div class="col">
+          <label>RG</label><br>
+          <input type="text" [(ngModel)]="user.rg_number" name="rg_number" placeholder="12.345.678" class="form-control"/><br>
+        </div>
+      </div>
       <button type="button" (click)="registerUser()" class="btn btn-primary">Registrar</button>
       <div class="divider"></div>
-      <button type="button" (click)="loginUser()" class="btn btn-secundary">Entrar</button>
+      <button type="button" [routerLink]="['/login']" class="btn btn-secundary">Entrar</button>
     </div>
   </div>
 </div>

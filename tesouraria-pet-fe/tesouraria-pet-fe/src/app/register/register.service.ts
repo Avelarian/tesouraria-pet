@@ -6,7 +6,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class RegisterService {
 
-  private baseUrl = 'http://localhost:8000/'
+  private baseUrl = 'http://localhost:3000/'
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,6 @@ export class RegisterService {
   options = {headers: this.headers}
 
   registerUser(user) {
-    return this.http.post<any>(this.baseUrl + 'register/', user, this.options);
+    return this.http.post<any>(this.baseUrl + 'signup/', user, this.options);
   }
 }

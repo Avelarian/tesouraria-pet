@@ -10,40 +10,35 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  user = {
-    username: null,
-    password: null
-  };
-  id = null;
-  constructor(private loginService: LoginService, private router: Router, private toastr: ToastrService, private route: ActivatedRoute) { }
+  user: {};
+  id: number;
+
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private toastr: ToastrService,
+    private route: ActivatedRoute
+  ) {
+    this.user = {
+      email: null,
+      password: null
+    };
+    this.id = null;
+  }
 
   loginUser() {
     this.loginService.loginUser(this.user)
     .subscribe(
       res => {
-        localStorage.setItem('token', res.token),
-        localStorage.setItem('userName', this.user.username),
-        this.loginService.getTheUser()
-          .subscribe(
-            resp => {
-              this.router.navigate(['saldoPessoal', resp[0].id]),
-              this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + this.user.username);
-            },
-            erro => {
-              this.toastr.error('Verifique a conexão e tente novamente!', 'Autenticação falhou!');
-              this.user = {username: null, password: null};
-            }
-          );
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['saldoPessoal', res.user.id_]);
+        this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + res.user.full_name);
+        localStorage.setItem('email', res.user.email);
       },
       err => {
         this.toastr.error('Usuário ou senha incorretos!', 'Autenticação falhou!');
-        this.user = {username: null, password: null};
       }
     );
-  }
-
-  registerUser() {
-    this.router.navigate(['/register']);
   }
 
   ngOnInit() {

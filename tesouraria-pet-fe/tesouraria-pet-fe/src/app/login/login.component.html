@@ -6,12 +6,12 @@
     </div>
     <div class="panel-body">
       <label>Usuário</label><br>
-      <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" class="form-control"/><br>
+      <input type="text" [(ngModel)]="user.email" name="username" placeholder="Email" class="form-control"/><br>
       <label>Senha</label><br>
       <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><br>
       <button type="button" (click)="loginUser()" class="btn btn-primary">Entrar</button>
       <div class="divider"></div>
-      <button type="button" (click)="registerUser()" class="btn btn-secundary">Registrar</button>
+      <button type="button" [routerLink]="['/register']" class="btn btn-secundary">Registrar</button>
     </div>
   </div>
 </div>

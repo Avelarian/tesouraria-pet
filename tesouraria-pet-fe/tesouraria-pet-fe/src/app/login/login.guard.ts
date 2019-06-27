@@ -9,15 +9,13 @@ import { LoginService } from './login.service';
 export class LoginGuard implements CanActivate {
 
   constructor(private router: Router, private loginService: LoginService) {}
-  result;
 
-  canActivate() : boolean {
-   if(this.loginService.loggedIn()) {
-     return true;
-   } else {
-     this.router.navigate(['/login']);
-     return false;
-   }
+  canActivate(): boolean {
+    if (this.loginService.loggedIn()) {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
+    }
   }
-  
 }

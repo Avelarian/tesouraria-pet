@@ -36,26 +36,17 @@ export class EventosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginService.tokenVerify()
-    .subscribe(
-      res => {
-        this.eventosService.getAllEvents()
-          .subscribe(
-            resp => {
-              this.events = resp;
-              this.getEvent(resp[0].id);
-              this.valueSelected = resp[0].id;
-            },
-            erro => {
-              this.toastr.error('Verifique sua conexão!', 'Erro!');
-            }
-          );
-      },
-      err => {
-        this.toastr.error('Refaça a autenticação!', 'Sessão expirada!');
-        this.router.navigate(['/login']);
-      }
-    );
+    this.eventosService.getAllEvents()
+      .subscribe(
+        resp => {
+          this.events = resp;
+          this.getEvent(resp[0].id);
+          this.valueSelected = resp[0].id;
+        },
+        erro => {
+          this.toastr.error('Verifique sua conexão!', 'Erro!');
+        }
+      );
   }
 
 }

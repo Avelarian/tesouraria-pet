@@ -12,14 +12,6 @@ export class CofreComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
-    this.loginService.tokenVerify()
-    .subscribe(
-      res => console.log("Token válido"),
-      err => {
-        localStorage.setItem('msg', 'Sessão expirada!')
-        this.router.navigate(['/login']);
-      }
-    )
   }
 
 }

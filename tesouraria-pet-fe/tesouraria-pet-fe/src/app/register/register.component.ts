@@ -10,12 +10,17 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class RegisterComponent implements OnInit {
 
-  user =  {};
+  user: {};
 
-  constructor(private router: Router, private registerService: RegisterService, private toastr: ToastrService) { }
-
-  loginUser() {
-    this.router.navigate(['/login']);
+  constructor(
+    private router: Router,
+    private registerService: RegisterService,
+    private toastr: ToastrService
+  ) {
+    this.user = {
+      email: null,
+      password: null
+    };
   }
 
   registerUser() {
@@ -26,7 +31,6 @@ export class RegisterComponent implements OnInit {
           this.toastr.success('Aguarde aprovação do tesoureiro para realizar o login!', 'Registro criado com sucesso!')
         }, err => {
           this.toastr.error('Verifique sua conexão!', 'Autenticação falhou!');
-          this.user = {username: null, password: null};
         }
       );
   }

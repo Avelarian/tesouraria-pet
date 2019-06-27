@@ -17,7 +17,7 @@ export class SaldoPessoalComponent implements OnInit {
   constructor(private saldoPessoalService: SaldoPessoalService, private loginService: LoginService, private router: Router, private toastr: ToastrService) {}
   
   ngOnInit() {
-    this.loginService.getTheUser()
+    this.loginService.getTheUser(1)
     .subscribe(
       resp => {
         this.router.navigate(['saldoPessoal', resp[0].id]),

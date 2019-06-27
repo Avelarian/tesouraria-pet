@@ -47,28 +47,18 @@ export class CaixinhaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginService.tokenVerify()
-    .subscribe(
-      res => {
-        console.log('Token válido');
-        this.caixinhaService.getTheHistorico()
-          .subscribe(
-            resp => this.historical = resp,
-            erro => {
-              if (erro.status === 400 || erro.status === 401) {
-                this.router.navigate(['/login']);
-                this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
-              } else {
-                this.toastr.error('Verifique sua conexão!', 'Erro!');
-              }
-            }
-          );
-      },
-      err => {
-        localStorage.setItem('msg', 'Sessão expirada!')
-        this.router.navigate(['/login']);
-      }
-    );
+    this.caixinhaService.getTheHistorico()
+      .subscribe(
+        resp => this.historical = resp,
+        erro => {
+          if (erro.status === 400 || erro.status === 401) {
+            this.router.navigate(['/login']);
+            this.toastr.error('Refaça a autenticação para continuar!', 'Sessão expirada!');
+          } else {
+            this.toastr.error('Verifique sua conexão!', 'Erro!');
+          }
+        }
+      );
   }
 
 }

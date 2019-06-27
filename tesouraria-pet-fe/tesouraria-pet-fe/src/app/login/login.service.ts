@@ -9,26 +9,22 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
-  baseUrl = 'http://localhost:8000/';
+  baseUrl = 'http://localhost:3000/';
 
   loginUser(user) {
-    return this.httpClient.post<any>(this.baseUrl + 'api-token-auth/', user);
+    return this.httpClient.post<any>(this.baseUrl + 'login/', user);
   }
 
   loggedIn() {
     return !!localStorage.getItem('token');
   }
 
-  tokenVerify() {
-    return this.httpClient.post<any>(this.baseUrl + 'api-token-verify/', {'token': localStorage.getItem('token')});
-  }
-
   logoutUser() {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
 
-  getTheUser() {
-    return this.httpClient.get<any>(this.baseUrl + 'petiano-id/');
+  getTheUser(id) {
+    return this.httpClient.get<any>(this.baseUrl + 'user/' + id);
   }
 }
