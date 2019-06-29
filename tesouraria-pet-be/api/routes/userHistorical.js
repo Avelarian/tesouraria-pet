@@ -28,7 +28,6 @@ router.post('/', (req, res, next) => {
     const userHistorical = new UserHistorical({
         _id: mongoose.Types.ObjectId(),
         user: req.body.user,
-        dt_created: req.body.dt_created,
         value: req.body.value,
         main_reason: req.body.main_reason,
         description: req.body.description,
@@ -64,6 +63,26 @@ router.get('/:id', (req, res, next) => {
            console.log(err);
            res.status(500).json({error: err});
        });
+});
+
+router.get('/user/:userId', (req, res, next) => {
+    const id = req.params.userId;
+    UserHistorical.find({ user: id })
+        .exec()
+        .then(doc => {
+            console.log(doc);
+            if (doc) {
+                res.status(200).json(doc);
+            } else {
+                res.status(404).json({
+                    message: 'No valid entry found for provided ID'
+                });
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({error: err});
+        });
 });
 
 router.patch("/:id", (req, res, next) => {

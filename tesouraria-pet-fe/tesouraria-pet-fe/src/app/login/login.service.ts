@@ -12,7 +12,7 @@ export class LoginService {
   baseUrl = 'http://localhost:3000/';
 
   loginUser(user) {
-    return this.httpClient.post<any>(this.baseUrl + 'login/', user);
+    return this.httpClient.post<any>(this.baseUrl + 'user/login/', user);
   }
 
   loggedIn() {

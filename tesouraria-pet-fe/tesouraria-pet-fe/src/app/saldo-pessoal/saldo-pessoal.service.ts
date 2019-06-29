@@ -8,12 +8,12 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class SaldoPessoalService {
 
-  baseUrl = 'http://localhost:8000';
+  baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
 
   getTheHistorico(id) {
-    return this.http.get<any>(this.baseUrl + '/historicoPetiano/' + id + '/');
+    return this.http.get<any>(this.baseUrl + '/userHistorical/user/' + id + '/');
   }
 }

@@ -18,11 +18,6 @@ const routes: Routes = [
   {
     path: 'saldoPessoal/:id',
     component: SaldoPessoalComponent,
-    // canActivate: [LoginGuard]
-  },
-  {
-    path: 'saldoPessoal',
-    component: SaldoPessoalComponent,
     canActivate: [LoginGuard]
   },
   {

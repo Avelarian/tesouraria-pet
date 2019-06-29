@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token', res.token);
-        this.router.navigate(['saldoPessoal', res.user.id_]);
+        this.router.navigate(['saldoPessoal', res.user._id]);
         this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + res.user.full_name);
         localStorage.setItem('email', res.user.email);
       },
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     localStorage.removeItem('token');
-    localStorage.removeItem('userName');
+    localStorage.removeItem('email');
   }
 
 }
