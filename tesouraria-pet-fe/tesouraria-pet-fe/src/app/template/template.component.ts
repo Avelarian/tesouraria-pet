@@ -10,7 +10,7 @@ export class TemplateComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
-  username = localStorage.getItem('userName')
+  username = localStorage.getItem('email')
 
   logoutUser() {
     this.loginService.logoutUser();

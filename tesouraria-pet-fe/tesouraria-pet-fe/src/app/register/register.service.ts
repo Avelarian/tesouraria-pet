@@ -18,6 +18,6 @@ export class RegisterService {
   options = {headers: this.headers}
 
   registerUser(user) {
-    return this.http.post<any>(this.baseUrl + 'signup/', user, this.options);
+    return this.http.post<any>(this.baseUrl + 'user/signup/', user, this.options);
   }
 }

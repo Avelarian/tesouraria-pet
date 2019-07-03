@@ -16,4 +16,8 @@ export class SaldoPessoalService {
   getTheHistorico(id) {
     return this.http.get<any>(this.baseUrl + '/userHistorical/user/' + id + '/');
   }
+
+  getTheUser(id) {
+    return this.http.get<any>(this.baseUrl + '/user/' + id);
+  }
 }

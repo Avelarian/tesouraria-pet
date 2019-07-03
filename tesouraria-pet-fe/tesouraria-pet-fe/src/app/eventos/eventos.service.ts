@@ -7,17 +7,21 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class EventosService {
 
-  baseUrl = 'http://localhost:8000';
+  baseUrl = 'http://localhost:3000/';
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   private id = null;
 
   getAllEvents() {
-    return this.http.get<any>(this.baseUrl + '/eventos/');
+    return this.http.get<any>(this.baseUrl + 'event/');
+  }
+
+  getTheEvent(id) {
+    return this.http.get<any>(this.baseUrl + 'event/' + id);
   }
 
   getTheEventHistorical(id) {
-    return this.http.get<any>(this.baseUrl + '/historicoEvento/' + id + '/');
+    return this.http.get<any>(this.baseUrl + 'eventHistorical/event/' + id + '/');
   }
 }

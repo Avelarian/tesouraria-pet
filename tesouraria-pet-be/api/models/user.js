@@ -22,7 +22,9 @@ const userSchema = mongoose.Schema({
     dt_entry_pet: { type: Date, default: Date.now },
     dt_leave_pet: { type: Date, default: Date.now },
     function_pet: String,
-    debt: Number
+    debt: { type: Number, default: 0},
+    monthly_payment: { type: Number, default: 0},
+    printing: { type: Number, default: 0},
 });
 
 module.exports = mongoose.model('user', userSchema);

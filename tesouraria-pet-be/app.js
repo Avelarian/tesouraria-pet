@@ -11,6 +11,7 @@ mongoose.Promise = global.Promise;
 const userHistoricalRouter = require('./api/routes/userHistorical');
 const eventHistoricalRouter = require('./api/routes/eventHistorical');
 const userRouter = require('./api/routes/user');
+const eventRouter = require('./api/routes/event');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 app.use('/userHistorical', userHistoricalRouter);
 app.use('/eventHistorical', eventHistoricalRouter);
 app.use('/user', userRouter);
+app.use('/event', eventRouter);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');

@@ -1,44 +1,68 @@
 <div class="wrapper" id="wrapper">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <img alt="Tesouraria PET Elétrica" style="display: inline-block; width: 13%;" src="./assets/img/logo.png">
+      <img alt="Tesouraria PET Elétrica" style="display: inline-block; width: 31px;" src="./assets/img/logo.png">
       Tesouraria PET Elétrica
     </div>
     <div class="panel-body">
       <label>Usuário</label><br>
-      <input type="text" [(ngModel)]="user.email" name="email" placeholder="Email" class="form-control"/><br>
+      <input type="text" [(ngModel)]="user.email" name="email" placeholder="petiano@pet.com" class="form-control"/><br>
       <label>Senha</label><br>
       <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control"/><hr>
       <div class="row">
-        <div class="col">
+        <div class="col-md-6">
           <label>Nome Completo</label><br>
           <input type="text" [(ngModel)]="user.full_name" name="full_name" placeholder="Ex.: Ian Avelar Peixoto" class="form-control"/><br>
         </div>
-        <div class="col">
+        <div class="col-md-6">
           <label>Número de celular</label><br>
           <input type="text" [(ngModel)]="user.mobile_number" name="mobile_number" placeholder="(34) 9 9999-9999" class="form-control"/><br>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-md-6">
           <label>Data de início do curso</label><br>
           <input type="text" [(ngModel)]="user.dt_start_course" name="dt_start_course" placeholder="08/08/2016" class="form-control"/><br>
         </div>
-        <div class="col">
+        <div class="col-md-6">
           <label>Data de término do curso (previsão)</label><br>
           <input type="text" [(ngModel)]="user.dt_finish_course" name="dt_finish_course" placeholder="08/08/2021" class="form-control"/><br>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-md-6">
           <label>CPF</label><br>
           <input type="text" [(ngModel)]="user.cpf_number" name="cpf_number" placeholder="123.456.789-10" class="form-control"/><br>
         </div>
-        <div class="col">
+        <div class="col-md-6">
           <label>RG</label><br>
           <input type="text" [(ngModel)]="user.rg_number" name="rg_number" placeholder="12.345.678" class="form-control"/><br>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label>Entrada no PET</label><br>
+          <input type="text" [(ngModel)]="user.dt_entry_pet" name="dt_entry_pet" placeholder="10/04/2017" class="form-control"/><br>
+        </div>
+        <div class="col-md-6">
+          <label>Previsao de saida do PET</label><br>
+          <input type="text" [(ngModel)]="user.dt_leave_pet" name="dt_leave_pet" placeholder="10/04/2019" class="form-control"/><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Numero de matricula</label><br>
+          <input type="text" [(ngModel)]="user.m_number" name="m_number" placeholder="12345ECP123" class="form-control"/><br>
+        </div>
+        <div class="col-md-9">
+          <label>Endereco completo</label><br>
+          <input type="text" [(ngModel)]="user.address" name="address" placeholder="Rua, Numero, Bairro, CEP" class="form-control"/><br>
+        </div>
+      </div>
+      <label>Departamento</label><br>
+      <select [(ngModel)]="user.function_pet" name="function_pet" class="form-control">
+        <option *ngFor="let item of functions" [value]="item">{{ item }}</option>
+      </select><br>
       <button type="button" (click)="registerUser()" class="btn btn-primary">Registrar</button>
       <div class="divider"></div>
       <button type="button" [routerLink]="['/login']" class="btn btn-secundary">Entrar</button>

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token);
         this.router.navigate(['saldoPessoal', res.user._id]);
         this.toastr.success('Bem vindo ao sistema do PET Elétrica!', 'Olá, ' + res.user.full_name);
-        localStorage.setItem('email', res.user.email);
+        localStorage.setItem('email', res.user.full_name);
       },
       err => {
         this.toastr.error('Usuário ou senha incorretos!', 'Autenticação falhou!');

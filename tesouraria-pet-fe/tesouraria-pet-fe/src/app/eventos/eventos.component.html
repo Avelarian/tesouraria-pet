@@ -14,12 +14,12 @@
           <div class="jumbotron">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-6"><p><b>Caixa: </b></p></div>
+                <div class="col-md-6"><p><b>Caixa: </b> {{ event.debt }}</p></div>
                 <div class="col-md-6"><div class="pull-right"><div class="btn-group">
                     <select class="btn btn-primary" [(ngModel)]="valueSelected"
-                            name="valueSelected" (change)="getEvent(valueSelected)" >
+                            name="valueSelected" (ngModelChange)="getEvent(valueSelected)" >
                       <option disabled selected>Eventos</option>
-                      <option *ngFor="let x of events" [value]="x.id">{{ x.name }}</option>
+                      <option *ngFor="let x of events" [value]="x._id">{{ x.name }}</option>
                     </select>
                   </div>
                 </div>
@@ -41,8 +41,8 @@
               </thead>
               <tbody *ngFor="let historic of historical">
                 <tr>
-                  <td>{{ historic.dt_created }}</td>
-                  <td>{{ historic.petiano }}</td>
+                  <td>{{ historic.dt_created | date:'dd/MM/yyyy' }}</td>
+                  <td>{{ historic.user.full_name }}</td>
                   <td>{{ historic.value }}</td>
                   <td>{{ historic.main_reason }}</td>
                   <td>{{ historic.from_place }}</td>

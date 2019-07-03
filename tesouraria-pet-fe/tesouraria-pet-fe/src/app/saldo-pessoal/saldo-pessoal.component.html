@@ -14,9 +14,9 @@
           <div class="jumbotron">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-4"><p><b>Dívida Total:</b></p></div>
-                <div class="col-md-4"><p>Impressões:</p></div>
-                <div class="col-md-4"><p>Mensalidade:</p></div>
+                <div class="col-md-4"><p><b>Dívida Total: {{ user.debt }}</b></p></div>
+                <div class="col-md-4"><p>Impressões: {{ user.monthly_payment }}</p></div>
+                <div class="col-md-4"><p>Mensalidade: {{ user.printing }}</p></div>
               </div>
             </div>
           <hr>
@@ -33,7 +33,7 @@
               </thead>
               <tbody *ngFor="let historic of historical">
                 <tr>
-                  <td>{{ historic.dt_created | date:'dd-MM-yyyy' }}</td>
+                  <td>{{ historic.dt_created | date:'dd/MM/yyyy' }}</td>
                   <td>R$ {{ historic.value }}</td>
                   <td>{{ historic.main_reason }}</td>
                   <td>{{ historic.from_place }}</td>
