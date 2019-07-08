@@ -6,15 +6,15 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CaixinhaService {
 
-  baseUrl = 'http://localhost:8000';
+  baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  getTheHistorico() {
-    return this.http.get<any>(this.baseUrl + '/caixinhaHistorico');
+  getCashierValue() {
+    return this.http.get<any>(this.baseUrl + '/cashier');
   }
 
-  getTheHistoricoEventos() {
-    return this.http.get<any>(this.baseUrl + '/caixinhaHistoricoEventos');
+  getCashierDate() {
+    return this.http.get<any>(this.baseUrl + '/cashier/latest');
   }
 }

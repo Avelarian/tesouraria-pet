@@ -24,7 +24,7 @@ router.get('/', checkAuth, (req, res, next) => {
         });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', checkAuth, (req, res, next) => {
     const userHistorical = new UserHistorical({
         _id: mongoose.Types.ObjectId(),
         user: req.body.user,
@@ -45,7 +45,7 @@ router.post('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkAuth, (req, res, next) => {
    const id = req.params.id;
    UserHistorical.findById(id)
        .exec()
@@ -65,7 +65,7 @@ router.get('/:id', (req, res, next) => {
        });
 });
 
-router.get('/user/:userId', (req, res, next) => {
+router.get('/user/:userId', checkAuth, (req, res, next) => {
     const id = req.params.userId;
     UserHistorical.find({ user: id })
         .exec()
@@ -85,7 +85,7 @@ router.get('/user/:userId', (req, res, next) => {
         });
 });
 
-router.patch("/:id", (req, res, next) => {
+router.patch("/:id", checkAuth, (req, res, next) => {
     const id = req.params.id;
     const updateOps = {};
     for (const ops of req.body) {
@@ -105,7 +105,7 @@ router.patch("/:id", (req, res, next) => {
         });
 })
 
-router.delete("/:id", (req, res, next) => {
+router.delete("/:id", checkAuth, (req, res, next) => {
     const id = req.params.id;
     UserHistorical.remove({_id: id})
         .exec()

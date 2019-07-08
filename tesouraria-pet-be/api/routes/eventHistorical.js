@@ -4,16 +4,17 @@ const mongoose = require('mongoose');
 
 const EventHistorical = require('../models/eventHistorical');
 const User = require('../models/user');
+const checkAuth = require('../middleware/check-auth');
 
 var itemsProcessed = 0;
 
-router.get('/', (req, res, next) => {
+router.get('/', checkAuth, (req, res, next) => {
    res.status(200).json({
       message: 'Historical Event were fetched'
    });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', checkAuth, (req, res, next) => {
     const eventHistorical = new EventHistorical({
         _id: mongoose.Types.ObjectId(),
         user: req.body.user,
@@ -35,21 +36,21 @@ router.post('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkAuth, (req, res, next) => {
     res.status(200).json({
         message: 'Historical Event details',
         eventId: req.params.id
     });
 });
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', checkAuth, (req, res, next) => {
     res.status(200).json({
         message: 'Historical Event deleted',
         eventId: req.params.id
     });
 });
 
-router.get('/event/:eventId', (req, res, next) => {
+router.get('/event/:eventId', checkAuth, (req, res, next) => {
     const id = req.params.eventId;
     EventHistorical.find({ event: id })
         .exec()

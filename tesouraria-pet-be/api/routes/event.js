@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const checkAuth = require('../middleware/check-auth');
 
 const Event = require('../models/event');
 
-router.get('/', (req, res, next) => {
+router.get('/', checkAuth, (req, res, next) => {
     Event.find()
         .exec()
         .then(docs => {
@@ -23,7 +24,7 @@ router.get('/', (req, res, next) => {
         });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', checkAuth, (req, res, next) => {
     const event = new Event({
         _id: mongoose.Types.ObjectId(),
         name: req.body.name,
@@ -40,7 +41,7 @@ router.post('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkAuth, (req, res, next) => {
     const id = req.params.id;
     Event.findById(id)
         .exec()

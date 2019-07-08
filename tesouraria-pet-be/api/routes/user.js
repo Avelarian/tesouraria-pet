@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const checkAuth = require('../middleware/check-auth');
 const User = require('../models/user');
 
-router.get('/', (req, res, next) => {
+router.get('/', checkAuth, (req, res, next) => {
     User.find()
         .exec()
         .then(docs => {
@@ -129,7 +130,7 @@ router.post('/login', (req, res, next) => {
         });
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkAuth, (req, res, next) => {
     const id = req.params.id;
     User.findById(id)
         .exec()
@@ -149,7 +150,7 @@ router.get('/:id', (req, res, next) => {
         });
 });
 
-router.patch("/:id", (req, res, next) => {
+router.patch("/:id", checkAuth, (req, res, next) => {
     const id = req.params.id;
     const updateOps = {};
     for (const ops of req.body) {
@@ -175,7 +176,7 @@ router.patch("/:id", (req, res, next) => {
 });
 
 
-router.delete("/:id", (req, res, next) => {
+router.delete("/:id", checkAuth, (req, res, next) => {
     const id = req.params.id;
     User.remove({_id: id})
         .exec()
