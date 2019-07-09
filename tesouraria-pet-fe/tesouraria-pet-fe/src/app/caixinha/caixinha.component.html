@@ -15,7 +15,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    <a (click)="getHistorical(1)" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                     Movimentação de petianos</a>
                   </h4>
                 </div>
@@ -35,8 +35,8 @@
                         </thead>
                         <tbody *ngFor="let historic of historical">
                         <tr>
-                          <td>{{ historic.dt_created }}</td>
-                          <td>{{ historic.petiano }}</td>
+                          <td>{{ historic.dt_created | date:'dd/MM/yyyy' }}</td>
+                          <td>{{ historic.user }}</td>
                           <td>{{ historic.value }}</td>
                           <td>{{ historic.main_reason }}</td>
                           <td>{{ historic.from_place }}</td>
@@ -51,7 +51,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    <a (click)="getHistorical(2)" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                     Movimentação de eventos</a>
                   </h4>
                 </div>
@@ -72,9 +72,9 @@
                         </thead>
                         <tbody *ngFor="let historic of historical">
                         <tr>
-                          <td>{{ historic.dt_created }}</td>
-                          <td>{{ historic.evento }}</td>
-                          <td>{{ historic.petiano }}</td>
+                          <td>{{ historic.dt_created | date:'dd/MM/yyyy' }}</td>
+                          <td>{{ historic.user }}</td>
+                          <td>{{ historic.event }}</td>
                           <td>{{ historic.value }}</td>
                           <td>{{ historic.main_reason }}</td>
                           <td>{{ historic.from_place }}</td>

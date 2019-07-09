@@ -13,8 +13,8 @@ import * as moment from 'moment';
 })
 export class SaldoPessoalComponent implements OnInit {
 
-  historical = [{}];
-  user = {};
+  historical: any = [{}];
+  user: any = {};
   id: number;
 
   constructor(private saldoPessoalService: SaldoPessoalService,
@@ -31,6 +31,14 @@ export class SaldoPessoalComponent implements OnInit {
           this.saldoPessoalService.getTheUser(this.id).subscribe(
             resp => {
               this.user = resp;
+              this.historical.forEach(h => {
+                if (h.main_reason === 'Impressão Pessoal') {
+                  this.user.printing++;
+                }
+                if (h.main_reason === 'Mensalidade') {
+                  this.user.monthly_payment++;
+                }
+              });
             }, erro => {
               if (erro.status === 400 || erro.status === 401) {
                 this.router.navigate(['/login']);

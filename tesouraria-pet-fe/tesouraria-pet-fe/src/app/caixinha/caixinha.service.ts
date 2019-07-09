@@ -17,4 +17,12 @@ export class CaixinhaService {
   getCashierDate() {
     return this.http.get<any>(this.baseUrl + '/cashier/latest');
   }
+
+  getCashierUserHistorical() {
+    return this.http.get<any>(this.baseUrl + '/userHistorical/cashier/historical');
+  }
+
+  getCashierEventHistorical() {
+    return this.http.get<any>(this.baseUrl + '/eventHistorical/cashier/historical');
+  }
 }

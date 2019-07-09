@@ -13,6 +13,8 @@ const eventHistoricalRouter = require('./api/routes/eventHistorical');
 const userRouter = require('./api/routes/user');
 const eventRouter = require('./api/routes/event');
 const cashierRouter = require('./api/routes/cashier');
+const safeRouter = require('./api/routes/safe');
+const bankAccountRouter = require('./api/routes/bankAccount');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -33,6 +35,8 @@ app.use('/eventHistorical', eventHistoricalRouter);
 app.use('/user', userRouter);
 app.use('/event', eventRouter);
 app.use('/cashier', cashierRouter);
+app.use('/safe', safeRouter);
+app.use('/bankAccount', bankAccountRouter);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
