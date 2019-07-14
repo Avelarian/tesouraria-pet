@@ -13,12 +13,16 @@ import { LoginComponent } from './login/login.component';
 import { TemplateComponent } from './template/template.component';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
-import { LoginGuard } from './login/login.guard';
+import { LoginGuard } from './Guard/login.guard';
 import { TokenInterceptorService } from './token-interceptor/token-interceptor.service';
 import { RegisterComponent } from './register/register.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { JwtModule} from '@auth0/angular-jwt';
+import { TreasurerMenuComponent } from './treasurer-menu/treasurer-menu.component';
+import { UserOperationsComponent } from './user-operations/user-operations.component';
+import { EventOperationsComponent } from './event-operations/event-operations.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     LoginComponent,
     TemplateComponent,
     RegisterComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    TreasurerMenuComponent,
+    UserOperationsComponent,
+    EventOperationsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,14 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        }
+      }
+    }),
   ],
   providers: [LoginService, LoginGuard, {
     provide: HTTP_INTERCEPTORS,

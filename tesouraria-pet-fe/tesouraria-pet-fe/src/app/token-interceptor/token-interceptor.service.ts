@@ -9,11 +9,11 @@ export class TokenInterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req, next) {
-    let tokenizedReq = req.clone({
+    const tokenizedReq = req.clone({
       setHeaders: {
         Authorization: 'JWT ' + localStorage.getItem('token')
       }
     })
-    return next.handle(tokenizedReq)
+    return next.handle(tokenizedReq);
   }
 }

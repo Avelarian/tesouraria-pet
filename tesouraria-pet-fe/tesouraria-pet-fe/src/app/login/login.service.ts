@@ -21,7 +21,6 @@ export class LoginService {
 
   logoutUser() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
   }
 
   getTheUser(id) {

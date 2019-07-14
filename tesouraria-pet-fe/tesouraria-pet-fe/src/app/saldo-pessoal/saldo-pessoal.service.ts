@@ -20,4 +20,8 @@ export class SaldoPessoalService {
   getTheUser(id) {
     return this.http.get<any>(this.baseUrl + '/user/' + id);
   }
+
+  getAllUsers() {
+    return this.http.get<any>(this.baseUrl + '/user/');
+  }
 }

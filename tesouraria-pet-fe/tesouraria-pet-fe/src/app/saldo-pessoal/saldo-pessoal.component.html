@@ -6,9 +6,19 @@
           <div class="jumbotron">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-md-4"><p><b>Dívida Total: {{ user.debt }}</b></p></div>
-                <div class="col-md-4"><p>Impressões: {{ user.printing }}</p></div>
-                <div class="col-md-4"><p>Mensalidade: {{ user.monthly_payment }}</p></div>
+                <div class="col-md-3"><p><b>Dívida Total: {{ user.debt }}</b></p></div>
+                <div class="col-md-3"><p>Impressões: {{ user.printing }}</p></div>
+                <div class="col-md-3"><p>Mensalidade: {{ user.monthly_payment }}</p></div>
+                <div class="col-md-3" *ngIf="loggedUser.role === 'Tesouraria'">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <select class="btn btn-primary" [(ngModel)]="user._id"
+                            name="id" (ngModelChange)="getUserHistorical(user._id)">
+                                <option *ngFor="let x of users" [value]="x._id">{{ x.full_name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
               </div>
             </div>
           <hr>

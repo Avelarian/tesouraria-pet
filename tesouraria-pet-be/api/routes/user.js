@@ -8,7 +8,7 @@ const checkAuth = require('../middleware/check-auth');
 const User = require('../models/user');
 
 router.get('/', checkAuth, (req, res, next) => {
-    User.find()
+    User.find({ is_active: true })
         .exec()
         .then(docs => {
             if (docs.length > 0) {
@@ -103,7 +103,10 @@ router.post('/login', (req, res, next) => {
                     } else if (result) {
                         const token = jwt.sign({
                             email: user[0].email,
-                            userId: user[0]._id
+                            _id: user[0]._id,
+                            role: user[0].function_pet,
+                            full_name: user[0].full_name,
+                            debt: user[0].debt
                         },
                             process.env.JWT_KEY,
                             {

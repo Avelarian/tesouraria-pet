@@ -6,8 +6,11 @@ import { CaixinhaComponent } from './caixinha/caixinha.component';
 import { CofreComponent } from './cofre/cofre.component';
 import { ContaBancariaComponent } from './conta-bancaria/conta-bancaria.component';
 import { LoginComponent } from './login/login.component';
-import { LoginGuard } from './login/login.guard';
+import { LoginGuard } from './Guard/login.guard';
 import { RegisterComponent } from './register/register.component';
+import {RoleGuard} from './Guard/role.guard';
+import {UserOperationsComponent} from './user-operations/user-operations.component';
+import {EventOperationsComponent} from './event-operations/event-operations.component';
 
 const routes: Routes = [
   {
@@ -16,7 +19,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'saldoPessoal/:id',
+    path: 'saldoPessoal',
     component: SaldoPessoalComponent,
     canActivate: [LoginGuard]
   },
@@ -48,7 +51,17 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-]
+  {
+    path: 'operations/user/:id',
+    component: UserOperationsComponent,
+    canActivate: [LoginGuard, RoleGuard]
+  },
+  {
+    path: 'operations/event/:id',
+    component: EventOperationsComponent,
+    canActivate: [LoginGuard, RoleGuard]
+  },
+];
 
 @NgModule({
   declarations: [],

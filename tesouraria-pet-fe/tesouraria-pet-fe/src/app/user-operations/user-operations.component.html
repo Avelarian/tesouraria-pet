@@ -1,0 +1,80 @@
+<app-template></app-template>
+<div class="container" style="width: 100%">
+  <div class="row">
+    <app-side-menu></app-side-menu>
+    <div class=col-md-10>
+      <app-treasurer-menu></app-treasurer-menu>
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Selecione o petiano: </label><br>
+            <div class="btn-group">
+              <select class="btn btn-primary" [(ngModel)]="historic.user" name="user">
+                <option *ngFor="let x of users" [value]="x._id">{{ x.full_name }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <label>Valor: </label>
+            <div class="input-group">
+              <span class="input-group-addon">R$</span>
+              <input [(ngModel)]="historic.value" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Razao principal: </label>
+            <div class="input-group">
+              <select class="form-control" [(ngModel)]="historic.main_reason" name="main_reason">
+                <option>Emprestimo Pessoal</option>
+                <option>Pagamento de divida</option>
+                <option>Impressão Pessoal</option>
+                <option>Impressão Externa</option>
+                <option>Mensalidade</option>
+              </select>
+            </div>
+          </div>
+        </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <label>Descricao: </label><br>
+              <textarea [(ngModel)]="historic.description" name="description" id="textarea" style="width: 100%" rows="3"></textarea>
+            </div>
+          </div>
+        <br>
+          <div class="row">
+            <div class="col-md-6">
+              <label>De: </label>
+              <div class="input-group">
+                <select class="form-control" [(ngModel)]="historic.from_place" name="from_place">
+                  <option>Caixinha</option>
+                  <option>Cofre</option>
+                  <option>Conta Bancaria</option>
+                  <option>Divida</option>
+                  <option>--</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Para: </label>
+              <div class="input-group">
+                <select class="form-control" [(ngModel)]="historic.to_place" name="to_place">
+                  <option>Caixinha</option>
+                  <option>Cofre</option>
+                  <option>Conta Bancaria</option>
+                  <option>Divida</option>
+                  <option>--</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-primary" (click)="submit()">Registrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

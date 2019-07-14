@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login/login.service';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-template',
@@ -8,14 +9,15 @@ import { LoginService } from '../login/login.service';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  public user: any = {};
 
-  username = localStorage.getItem('email')
-
+  constructor(private loginService: LoginService,
+              private jwtHelper: JwtHelperService) {
+    this.user = this.jwtHelper.decodeToken(localStorage.getItem('token'));
+  }
   logoutUser() {
     this.loginService.logoutUser();
   }
-
   ngOnInit() {
   }
 

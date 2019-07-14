@@ -2,23 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe618ed1-c69a-4daf-a9a1-f3bc250dfe64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/models/bankAccount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/safe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/bankAccount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/safe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/eventHistorical.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/eventHistorical.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/userHistorical.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/userHistorical.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/caixinha/caixinha.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/eventos/eventos.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.guard.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/Guard/login.guard.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/Guard/login.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/login/login.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/saldo-pessoal/saldo-pessoal.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/side-menu/side-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/side-menu/side-menu.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/side-menu/side-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/side-menu/side-menu.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/template/template.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/template/template.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/template/template.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/template/template.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/token-interceptor/token-interceptor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../tesouraria-pet-fe/tesouraria-pet-fe/src/app/token-interceptor/token-interceptor.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,15 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/eventHistorical.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1367">
-              <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/models/safe.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -50,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/api/models/bankAccount.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -58,13 +50,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/safe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
+            <state relative-caret-position="1032">
               <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/bankAccount.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
@@ -74,10 +66,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/routes/userHistorical.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="161" column="91" selection-start-line="161" selection-start-column="91" selection-end-line="161" selection-end-column="91" />
+            <state relative-caret-position="436">
+              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -85,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
+            <state relative-caret-position="912">
               <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
             </state>
           </provider>
@@ -112,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/cashier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="1488">
               <caret line="62" column="11" lean-forward="true" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
             </state>
           </provider>
@@ -137,7 +138,6 @@
         <option value="$PROJECT_DIR$/api/models/user.js" />
         <option value="$PROJECT_DIR$/api/models/event.js" />
         <option value="$PROJECT_DIR$/api/models/eventHistorical.js" />
-        <option value="$PROJECT_DIR$/api/routes/user.js" />
         <option value="$PROJECT_DIR$/api/routes/event.js" />
         <option value="$PROJECT_DIR$/api/models/cashier.js" />
         <option value="$PROJECT_DIR$/api/routes/cashier.js" />
@@ -148,10 +148,11 @@
         <option value="$PROJECT_DIR$/api/routes/eventHistorical.js" />
         <option value="$PROJECT_DIR$/api/routes/userHistorical.js" />
         <option value="$PROJECT_DIR$/api/routes/bankAccount.js" />
+        <option value="$PROJECT_DIR$/api/routes/user.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -174,6 +175,12 @@
               <item name="tesouraria-pet-be" type="b2602c69:ProjectViewProjectNode" />
               <item name="tesouraria-pet-be" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tesouraria-pet-be" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tesouraria-pet-be" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,16 +249,21 @@
       <workItem from="1562112522900" duration="5487000" />
       <workItem from="1562544453069" duration="4397000" />
       <workItem from="1562624073243" duration="4725000" />
+      <workItem from="1563032895741" duration="980000" />
+      <workItem from="1563042085767" duration="10000" />
+      <workItem from="1563063413086" duration="1357000" />
+      <workItem from="1563112878192" duration="1181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15689000" />
+    <option name="totallyTimeSpent" value="19217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="375" y="0" width="1065" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14446793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1954023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -341,24 +353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/user.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/eventHistorical.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1113">
-          <caret line="121" column="19" lean-forward="true" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/event.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/cashier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="11" selection-end-line="13" />
+        <state relative-caret-position="2760">
+          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -372,42 +370,14 @@
     <entry file="file://$PROJECT_DIR$/api/models/bankAccount.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/safe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
+        <state relative-caret-position="1032">
           <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/cashier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="62" column="11" lean-forward="true" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/userHistorical.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="161" column="91" selection-start-line="161" selection-start-column="91" selection-end-line="161" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/eventHistorical.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1367">
-          <caret line="115" column="36" selection-start-line="115" selection-start-column="36" selection-end-line="115" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -415,6 +385,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/cashier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="11" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/cashier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1488">
+          <caret line="62" column="11" lean-forward="true" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/userHistorical.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
         </state>
       </provider>
     </entry>

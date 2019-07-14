@@ -1,6 +1,8 @@
 <div class="col-md-2">
   <ul class="nav nav-pills nav-stacked">
-    <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['/saldoPessoal', id]">Saldo pessoal</a></li>
+    <li *ngIf="user.role === 'Tesouraria'" role="presentation" [routerLinkActive]="['active']"
+        [ngClass]="{'active': active }"><a [routerLink]="['/operations/user', 'new']">Operacoes</a></li>
+    <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['/saldoPessoal']">Saldo pessoal</a></li>
     <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['/eventos']">Eventos</a></li>
     <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['/caixinha']">Caixinha</a></li>
     <li role="presentation" [routerLinkActive]="['active']"><a [routerLink]="['/cofre']">Cofre</a></li>
